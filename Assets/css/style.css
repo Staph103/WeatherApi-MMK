@@ -1,0 +1,37 @@
+header{
+    background-color: rgb(17, 14, 42);
+}
+.card-container{
+    display: flex;
+    
+}
+.input-style input{
+
+    height: 40px;
+    font-size: 20px;
+    display: flex;
+    
+
+}
+.input-style{
+    width: 400px;
+    
+}
+.container{
+    display: flex;
+    
+}
+.weather{
+    width: 100%;
+    background-color: aqua;
+}
+.s-btn{
+
+    width: 100%;
+    padding: 8px;
+}
+.l-btn{
+    width: 100%;
+    padding:8px;
+
+}
