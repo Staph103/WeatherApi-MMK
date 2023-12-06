@@ -9,17 +9,14 @@ var fIcon = 'https://openweathermap.org/img/wn/'
 
 
 
-  
-// function searchedCities(){
-// // var savedList = JSON.parse(localStorage.getItem("searches")) || [];
-
-// }
 
 function searchCity() {
 
     let city = cityEl.val();
     var fullUrl = frontUrl + city + endUrl;
     // let fullUrl = `${frontUrl+city+endUrl}`
+   
+
     console.log(city);
     console.log(fullUrl);
 
@@ -31,26 +28,42 @@ function searchCity() {
             // Use the console to examine the response
             console.log(data);
             console.log(data.list.length);
-
+            var fiveDaysEl = $('#fiveDays');    
 
             // TODO: Loop through the data and generate your HTML
-            for (var i = 0; i < data.list.length; i = i + 8) {
-                //= document.createElement('h3');
-                //= document.createElement('p');
-                var weatherDate = data.list[i].dt_txt;
-                var temp = data.list[i].main.temp;
-                var windInfo = data.list[i].wind.speed;
-                var humidity = data.list[i].main.humidity;
-                var iconCode = data.list[i].weather[0].icon;
+            for (let i = 0; i < fiveDaysEl.children().length; i++) {
+                var listEl = fiveDaysEl.children().eq(i)
+
+
+//                 var articlesDiv = document.getElementById("articles");
+// var headerDiv = document.getElementById("header");
+
+// // Change style by accessing style object's properties
+// articlesDiv.children[0].children[1].style.fontSize = "50px";
+// headerDiv.children[0].style.color = "white";
+// headerDiv.children[1].style.color = "white";
+
+                var index = i * 8;
+                var weatherDate = data.list[index].dt_txt;
+                var temp = data.list[index].main.temp;
+                var windInfo = data.list[index].wind.speed;
+                var humidity = data.list[index].main.humidity;
+                var iconCode = data.list[index].weather[0].icon;
                 var weatherIcon = fIcon + iconCode + "@2x.png";
                 console.log(weatherIcon);
-
-                var cardInfo = $('<li>');
-                var weatherDateEl = $('<h4>').text(weatherDate)
-                var tempEl = $('<p>').text(temp)
-                var windInfoEl = $('<p>').text(windInfo)
-                var humidityEl = $('<p>').text(humidity)
-                var weatherIconEl = $('<img>');
+                
+                // var fiveDaysEl = $('#fiveDays');
+                // for (let i = 0; index < fiveDaysEl.children().length; i++) {
+                //     var text = fiveDaysEl[i];
+                    
+                // }
+                var cardInfo = $('li');
+                listEl.children().eq(0).text(weatherDate)
+                var weatherIconEl = $('img').attr('src', weatherIcon);
+                var tempEl = $('p').text("Temp: " + temp + "°F")
+                var windInfoEl = $('p').text("Wind: " + windInfo + "MPH")
+                var humidityEl = $('p').text("Humidity: " + humidity + "%")
+                console.log(listEl)
 
                 // cardSlot.addClass('card row')
                 cardSlot.append(cardInfo);
@@ -60,15 +73,17 @@ function searchCity() {
                 console.log(windInfo);
                 console.log(humidity);
             }
-            while (cardSlot.firstChild) {
-                cardSlot.removeChild(cardSlot.firstChild)
-                cardInfo.append(weatherDateEl);
-                cardInfo.append(tempEl);
-                cardInfo.append(windInfoEl);
-                cardInfo.append(humidityEl);
-                cardInfo.append(weatherIconEl);
-                cardSlot.appendChild(cardInfo);
-            }
+            // while (cardSlot.firstChild) {
+                console.log("im in a loop")
+                listEl.
+                // cardInfo.append(weatherDateEl);
+                // cardInfo.append(tempEl);
+                // cardInfo.append(windInfoEl);
+                // cardInfo.append(humidityEl);
+                // cardInfo.append(weatherIconEl);
+                // cardSlot.removeChild(cardSlot.firstChild)
+                cardSlot.append(cardInfo);
+            // }
 
             // °F
 
@@ -78,14 +93,17 @@ function searchCity() {
         });
         
 
-
-       
-    // get nearby values of the description in jQuery
-    //  var text = $(this).siblings('.description').val();
-    //  // get the id attribute of the parent div element
-    //  var timeKey = $(this).parent().attr('id');
-    //  localStorage.setItem(timeKey, text);
 }
+function searchedCities(city){
+    var savedList = JSON.parse(localStorage.getItem("searches")) || [];
+    console.log(savedList); 
+
+    savedList.push(city);
+
+    localStorage.setItem("searches",JSON.stringify(savedList));
+    console.log(savedList);
+}
+
 
 searchBtn.on('click', searchCity);
 
