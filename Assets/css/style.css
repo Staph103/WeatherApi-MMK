@@ -1,8 +1,13 @@
 header{
-    background-color: rgb(17, 14, 42);
+    background-color: #17334d;
+}
+h1{
+    background-color: #17334d;
+    color: white;
+    text-align: right;
 }
 .card-container{
-    display: flex;
+    
     
 }
 .input-style input{
@@ -13,17 +18,30 @@ header{
     
 
 }
+
+h2{
+    color: #17334d;
+}
+
 .input-style{
     width: 400px;
+   
     
 }
 .container{
     display: flex;
+    border: solid red;
+    
     
 }
 .weather{
     width: 100%;
-    background-color: aqua;
+    background-color: #17334d;
+    color: white;
+
+}
+.weather .pic img{
+    max-width: 120px;
 }
 .s-btn{
 
@@ -34,4 +52,14 @@ header{
     width: 100%;
     padding:8px;
 
+}
+.forecast{
+    
+}
+.cardSlot{
+    
+}
+.card{
+    background-color: rgb(75, 75, 75);
+    color: white;
 }
