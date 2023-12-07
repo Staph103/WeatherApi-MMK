@@ -1,28 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<!--calls links needed  to use bootstrap -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="Assets/css/style.css" />
-    <title>Document</title>
+    <title>Weather - App</title>
 </head>
 
 <body>
 
-    <!--weather header -->
-
+   
+<!--header of the page-->
     <h1 class="header p-4">Weather Dashboard</h1>
     <div class="container ">
 
-
-        <div class="">
+<!--creates input section for the page with placeholder info-->
+        <div>
             <div class="cities row">
                 <div class="mb-3 input-style">
                     <h2>Search for a City:</h2>
@@ -33,14 +29,14 @@
                     <button class="my-3 s-btn">Search</button>
                     <button class="l-btn">Use Current location</button>
                 </div>
-
+<!--created place holder card information for weather cards created dynamically in script file-->
                 <div class="card-container row">
                     <div class="weather p-4 d-flex">
                         <div class="info text-right">
 
                             <h1 id="cityName">London</h1>
                             <h2 id="h2">(__________)</h2>
-                            <img>
+                            <img alt="image of current weather">
                             <p id="test">Temp: ___ C</p>
                             <p id="test2">Wind: ___ MPH</p>
                             <p id="test3">Humidity: __%</p>
@@ -53,7 +49,7 @@
                     <ul class="cardSlot row" id="fiveDays">
                         <li class="card col-lg-2 m-3">
                             <h4>(_______)</h4>
-                            <img>
+                            <img alt="image of current weather">
                             <p>Temp: ___ C</p>
                             <p>Wind: ___ MPH</p>
                             <p>Humidity: __%</p>
@@ -61,7 +57,7 @@
                         </li>
                         <li class="card col-lg-2 m-2" id="day1">
                             <h4>(_______)</h4>
-                            <img>
+                            <img alt="image of current weather">
                             <p>Temp: ___ C</p>
                             <p>Wind: ___ MPH</p>
                             <p>Humidity: __%</p>
@@ -69,7 +65,7 @@
                         </li>
                         <li class="card col-lg-2 m-2" id="day2">
                             <h4>(_______)</h4>
-                            <img>
+                            <img alt="image of current weather">
                             <p>Temp: ___ C</p>
                             <p>Wind: ___ MPH</p>
                             <p>Humidity: __%</p>
@@ -77,7 +73,7 @@
                         </li>
                         <li class="card col-lg-2 m-2" id="day3">
                             <h4>(_______)</h4>
-                            <img>
+                            <img alt="image of current weather">
                             <p>Temp: ___ C</p>
                             <p>Wind: ___ MPH</p>
                             <p>Humidity: __%</p>
@@ -85,7 +81,7 @@
                         </li>
                         <li class="card col-lg-2 m-2" id="day4">
                             <h4>(_______)</h4>
-                            <img>
+                            <img alt="image of current weather">
                             <p>Temp: ___ C</p>
                             <p>Wind: ___ MPH</p>
                             <p>Humidity: __%</p>
@@ -100,7 +96,7 @@
 
     </div>
     </div>
-
+<!--jquery links -->
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="Assets/js/script.js"></script>
