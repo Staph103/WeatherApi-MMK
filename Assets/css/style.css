@@ -30,7 +30,7 @@ h2{
 }
 .container{
     display: flex;
-    border: solid red;
+    
     
     
 }
@@ -57,9 +57,29 @@ h2{
     
 }
 .cardSlot{
-    
+    display: flex;
+justify-content: space-between;
 }
 .card{
-    background-color: rgb(75, 75, 75);
+    background-color: #17334d;
     color: white;
+}
+p{
+    font-weight: 800px;
+}
+.info{
+    font-size: 20px;
+    text-align: center;
+    position: relative;
+    left: 600px;
+}
+#h2{
+    color: white;
+
+}
+#cityName{
+
+    position: relative;
+    right:600px;
+    text-align: left;
 }
